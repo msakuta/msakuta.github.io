@@ -258,12 +258,21 @@ form {
 }
 
 img {
-  width: 100%;
   max-width: 100%;
 }
 
-td.showcase{
-  width: 30%;
+.container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-evenly;
+  align-content: space-between;
+}
+
+.showcase{
+  width: 20em;
+  padding: 0.5em;
+  margin-bottom: 5px;
+  background-color: #F0F8FF;
 }
 
 /*******************************************************************************
