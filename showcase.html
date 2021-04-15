@@ -5,6 +5,27 @@ layout: wide
 <h1>Showcase</h1>
 <div class="container">
 	<div class="showcase">
+		<a href="https://github.com/msakuta/cfd-wasm">
+			<h2>cfd-wasm</h2>
+			<div>Computational Fluid Dynamics in Wasm with Rust</div>
+			<div><img src="images/showcase/cfd.gif" alt="" /></div>
+		</a>
+	</div>
+	<div class="showcase">
+		<a href="https://github.com/msakuta/rusty-parser">
+			<h2>rusty-parser</h2>
+			<div>Learning project of parsers with Rust and nom</div>
+			<div><img src="images/showcase/rusty-parser.png" alt="" /></div>
+		</a>
+	</div>
+	<div class="showcase">
+		<a href="https://github.com/msakuta/web-hanabi">
+			<h2>web-hanabi</h2>
+			<div>Hanabi card game on the web (hopefully with AI)</div>
+			<div><img src="images/showcase/web-hanabi.png" alt="" /></div>
+		</a>
+	</div>
+	<div class="showcase">
 		<a href="https://github.com/msakuta/shooter-rust-wasm">
 			<h2>shooter-rust-wasm</h2>
 			<div>Shoot-em up game in Wasm and Rust</div>
@@ -166,3 +187,26 @@ layout: wide
 		</a>
 	</div>
 </div>
+<style>
+.container{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content:space-evenly;
+	align-content: space-between;
+}
+img{
+	/* width: 20em; */
+	max-width: 100%;
+	/* max-height: 100%; */
+}
+.showcase{
+  width: 20em;
+  /* height: 30em; */
+  background-color: #F0F8FF;
+  padding: 0.5em;
+  margin-bottom: 5px;
+}
+
+</style>
+</body>
+</html>
