@@ -9,3 +9,5 @@ Showcase
 
 See [Showcase](showcase.html)
 
+
+[Parser optimization](parser-optimize.md)
