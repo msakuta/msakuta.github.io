@@ -40,14 +40,14 @@ I found that we use a pattern like below pretty often.
 
 ```rust
 fn array_rows(i: Span) -> IResult<Span, Vec<Vec<Expression>>> {
-    let (r, (mut val, last)) = pair(
-	    many0(terminated(array_row, ws(tag(";")))), opt(array_row)
-	)(i)?;
+    let (r, (mut val, last)) = pair(
+        many0(terminated(array_row, ws(tag(";")))), opt(array_row)
+    )(i)?;
 
-    if let Some(last) = last {
-        val.push(last);
-    }
-    Ok((r, val))
+    if let Some(last) = last {
+        val.push(last);
+    }
+    Ok((r, val))
 }
 ```
 
@@ -57,7 +57,7 @@ The fix is easy. Instead of try `<array_row> ;` and try `<array_row>` again, we 
 
 ```rust
 fn array_rows(i: Span) -> IResult<Span, Vec<Vec<Expression>>> {
-    terminated(separated_list0(char(';'), array_row), opt(ws(char(';'))))(i)
+    terminated(separated_list0(char(';'), array_row), opt(ws(char(';'))))(i)
 }
 ```
 
@@ -70,9 +70,9 @@ I injected code like below to count the calls to each parser function. Since `no
 static ARRAY_LIT: std::sync::atomic::AtomicUsize = std::sync::atomic::AtomicUsize::new(0);
 
 pub(crate) fn array_literal(i: Span) -> IResult<Span, Expression> {
-    ARRAY_LIT.fetch_add(1, Relaxed);
-	// ...
-    Ok((r, Expression::new(ExprEnum::ArrLiteral(val), span)))
+    ARRAY_LIT.fetch_add(1, Relaxed);
+    // ...
+    Ok((r, Expression::new(ExprEnum::ArrLiteral(val), span)))
 }
 ```
 
